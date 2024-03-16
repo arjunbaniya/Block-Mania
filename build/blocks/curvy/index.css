@@ -1,0 +1,33 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/curvy/editor.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-block-mania-curvy {
+  position: relative;
+}
+
+.block-editor-block-inspector .components-base-control {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.wp-block-block-mania-curvy {
+  position: relative;
+  background: #0693E3;
+  padding: 80px 50px;
+}
+
+.curvy-icon {
+  background: rgb(8, 125, 241);
+  color: #000;
+}
+.curvy-icon:hover {
+  background: rgb(140, 27, 246);
+  color: #fff;
+}
+
+/*# sourceMappingURL=index.css.map*/

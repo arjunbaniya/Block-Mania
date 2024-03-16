@@ -1,0 +1,140 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "block-mania/curvy",
+	"version": "0.1.0",
+	"title": "Curvy",
+	"category": "block-mania",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"color": {
+			"background":true,
+			"link": true,
+			"text": true
+		},
+		"spacing": {
+			"padding":true,
+			"margin": true
+		}
+		
+	},
+	"variations": [ {
+		"name": "top-only",
+		"title": "Curvy -top only",
+		"attributes": {
+			"enablebottomcurve": false,
+			"enabletopcurve":true
+
+			
+		}
+	},
+		{
+			"name": "bottom-only",
+			"title": "Curvy -bottom only",
+			"attributes": {
+				"enablebottomcurve": true,
+				"enabletopcurve":false
+	
+				
+			}
+	}
+
+
+	],
+	"example":{
+		"innerBlocks": [
+			{
+				"name": "core/heading",
+				"attributes": {
+					"content":"Heading"
+
+				}
+			},
+			{
+				"name": "core/paragraph",
+				"attributes": {
+					"content":"This is an example curvy block."
+
+				}
+			}
+			
+		]
+	},
+	"attributes": {
+		"style" :{
+			"type":"object",
+			"default": {
+				"color":{
+					"background":"#0693E3"
+				},
+				"spacing":{
+					"padding":{
+						"top":"0px",
+						"buttom":"0px",
+						"left":"0px",
+						"right":"0px"
+
+					}
+				}
+			}
+		},
+		"enabletopcurve":{
+			"type":"boolean",
+			"default": true
+		},
+		"topwidth":{
+			"type":"number",
+			"default": 100
+		},
+		"topheight":{
+			"type":"number",
+			"default": 200
+		},
+		"topflipX":{
+			"type":"boolean",
+			"default": true
+		},
+		"topflipY":{
+			"type":"boolean",
+			"default": true
+		},
+		"topcolor":{
+			"type":"string",
+			"default":"#fff"
+		},
+		"enablebottomcurve":{
+			"type":"boolean",
+			"default": true
+		},
+		"bottomwidth":{
+			"type":"number",
+			"default": 100
+		},
+		"bottomheight":{
+			"type":"number",
+			"default": 100
+		},
+		"bottomflipX":{
+			"type":"boolean",
+			"default": false
+		},
+		"bottomflipY":{
+			"type":"boolean",
+			"default": false
+		},
+		"bottomcolor":{
+			"type":"string",
+			"default":"#fff"
+		}
+
+	},
+	"textdomain": "block-mania",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php"
+}

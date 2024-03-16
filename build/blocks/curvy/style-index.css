@@ -1,0 +1,31 @@
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/curvy/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-block-mania-curvy {
+  position: relative;
+  background: #0693E3;
+  padding: 0px 0px !important;
+}
+.wp-block-block-mania-curvy .curve {
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.wp-block-block-mania-curvy .curve.top-curve {
+  top: 0;
+}
+.wp-block-block-mania-curvy .curve.button-curve {
+  bottom: 0;
+}
+.wp-block-block-mania-curvy .curve svg {
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

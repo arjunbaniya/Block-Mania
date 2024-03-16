@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/clickyButton/style-index.css","mappings":";;;AAAA;EACI;EACA;EACA;EACA;AACJ,C","sources":["webpack://curvy/./src/blocks/clickyButton/style.scss"],"sourcesContent":[".wp-block-block-mania-clicky-button{\n    text-decoration: none;\n    background-color: #000;\n    color:#fff;\n    padding: 15px;\n    \n}"],"names":[],"sourceRoot":""}

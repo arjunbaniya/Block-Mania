@@ -1,0 +1,37 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-block-mania-curvy {
+	position: relative;
+	background:#0693E3;
+	padding: 0px 0px!important;
+	.curve{
+		
+		top:0;
+		width: 100%;
+		overflow: hidden;
+
+		&.top-curve{
+			top:0;
+
+		}
+		&.button-curve{
+			bottom: 0;
+
+		}
+		svg {
+			
+			top:0;
+			left:0;
+
+
+
+
+		}
+	}
+
+}

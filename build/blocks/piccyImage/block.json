@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "block-mania/piccy-image",
+  "version": "0.1.0",
+  "title": "Piccy Image",
+  "category": "block-mania",
+  "icon": "format-image",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "image_id": {
+      "type": "number"
+    }
+  },
+  "parent": [
+    "block-mania/piccy-gallery"
+  ],
+  "textdomain": "block-mania",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
