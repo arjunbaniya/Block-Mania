@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "block-mania/clicky-group",
+	"version": "0.1.0",
+	"title": "Clicky group",
+	"category": "block-mania",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"blockGap": true
+		}
+		},
+		"attributes": {
+		"styles": {
+			"spacing": {
+				"blockGap": "1.5rem"
+				} 	
+			},
+		"JustifyContent":{
+			"type":"string",
+			"enum": ["left","center","right"],
+			"default": "center"
+
+		}
+		},
+	
+	
+	"textdomain": "block-mania",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

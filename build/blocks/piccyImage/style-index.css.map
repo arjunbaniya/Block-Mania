@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/piccyImage/style-index.css","mappings":";;;AAAA;EACI;EACA;EACA;EACA;AACJ,C","sources":["webpack://curvy/./src/blocks/piccyImage/style.scss"],"sourcesContent":[".wp-block-block-mania-piccy-gallery{\n    padding:40px;\n    background: #fff;\n    position: relative;\n    box-sizing: border-box;\n}"],"names":[],"sourceRoot":""}
