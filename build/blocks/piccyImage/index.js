@@ -20,6 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/piccyImage/editor.scss");
 /* harmony import */ var _piccyGallery_block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../piccyGallery/block.json */ "./src/blocks/piccyGallery/block.json");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -27,19 +30,45 @@ __webpack_require__.r(__webpack_exports__);
 
 function Edit(props) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
+  const image = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useSelect)(select => {
+    const data = select("core").getEntityRecord("postType", "attachment", props.attributes.imageId);
+    return data;
+  }, [props.attributes.imageId]);
+  const imageSelected = !!props.attributes.imageId && !!image?.source_url;
+  console.log(image);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
+  }, imageSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    style: {
+      display: "block",
+      height: 150,
+      width: '100%',
+      objectFit: "cover"
+    },
+    src: image.source_url
+  }), !imageSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      display: "block",
+      height: 150,
+      width: '100%',
+      objectFit: "cover",
+      background: '#fff'
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
     allowedTypes: ['image'],
     render: ({
       open
     }) => {
       return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+        className: "media-select",
         onClick: open
-      }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select an image', _piccyGallery_block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain));
+      }, imageSelected ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Replace image', _piccyGallery_block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain) : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select an image', _piccyGallery_block_json__WEBPACK_IMPORTED_MODULE_4__.textdomain));
     },
+    value: props.setAttributes.imageId,
     onSelect: item => {
-      console.log(item);
+      props.setAttributes({
+        imageId: item.id
+      });
     }
   })));
 }
@@ -174,6 +203,16 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
+/***/ "@wordpress/data":
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["data"];
+
+/***/ }),
+
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -200,7 +239,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
   \******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"block-mania/piccy-image","version":"0.1.0","title":"Piccy Image","category":"block-mania","icon":"format-image","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"image_id":{"type":"number"}},"parent":["block-mania/piccy-gallery"],"textdomain":"block-mania","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"block-mania/piccy-image","version":"0.1.0","title":"Piccy Image","category":"block-mania","icon":"format-image","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"attributes":{"imageId":{"type":"number"}},"parent":["block-mania/piccy-gallery"],"textdomain":"block-mania","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ })
 

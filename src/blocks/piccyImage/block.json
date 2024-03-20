@@ -13,7 +13,7 @@
 
 		},
 	"attributes": {
-		"image_id": {
+		"imageId": {
 			"type": "number"
 		}
 	},
