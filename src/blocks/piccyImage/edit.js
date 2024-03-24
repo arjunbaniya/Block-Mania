@@ -3,6 +3,10 @@ import { __ } from '@wordpress/i18n';
 import './editor.scss';
 import metadata from "../piccyGallery/block.json";
 import {useSelect} from '@wordpress/data';
+import {Icon} from '@wordpress/components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faImage} from "@fortawesome/free-solid-svg-icons";
+
 export default function Edit(props) {
 	const blockProps = useBlockProps();
 	const image= useSelect((select)=> {
@@ -23,7 +27,10 @@ export default function Edit(props) {
 			/>	
 			)	}
 			{!imageSelected &&
-			  <div style={{display:"block", height:150, width:'100%', objectFit:"cover", background:'#fff'}} />
+			  <div style={{display:"flex", height:150, width:'100%', objectFit:"cover", background:'#fff'}}>
+				
+				<FontAwesomeIcon icon={faImage} style={{margin: "auto"}} />			
+			  </div> 
 			}
 			<MediaUploadCheck>
 				<MediaUpload

@@ -21,6 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Block_mania {
     public static function init() {
+        add_action('enqueue_block_assets', function () {
+			wp_enqueue_style("dashicons");
+			//$style_url = plugins_url("build/style-index.css", __FILE__);
+			//wp_enqueue_style('block-mania-style', $style_url, array());
+		});
         add_action( 'init', function() {
             add_filter( 'block_categories_all', function( $categories ) {
                 array_unshift( $categories, [
